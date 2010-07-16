@@ -153,34 +153,4 @@ if ( ! function_exists('mopr_load_view'))
 		}
 	}
 }
-
-if ( ! function_exists('mopr_load_json_library'))
-{
-	/**
-	 * Loads the JSON library
-	 *
-	 * @package MobilePress
-	 * @since 1.1
-	 */
-	function mopr_load_json_library()
-	{
-		require_once(MOPR_PATH . 'libraries/json.php');
-		return new Services_JSON();
-	}
-}
-
-if ( ! function_exists('mopr_load_aduity_api_library'))
-{
-	/**
-	 * Loads the Aduity Library
-	 *
-	 * @package MobilePress
-	 * @since 1.1
-	 */
-	function mopr_load_aduity_api_library($apk, $ask)
-	{
-		require_once(MOPR_PATH . 'libraries/aduity_api.php');
-		return new Aduity_api_request($apk, $ask);
-	}
-}
 ?>

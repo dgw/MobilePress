@@ -3,7 +3,7 @@
 Plugin Name: MobilePress
 Plugin URI: http://mobilepress.co.za
 Description: Turn your WordPress blog into a mobile website/blog.
-Version: 1.1.4
+Version: 1.1.5
 Author: Aduity
 Author URI: http://aduity.com
 
@@ -63,7 +63,7 @@ if (class_exists('MobilePress_core'))
 		}
 		
 		// Load the ad/analytics helpers
-		require_once(dirname(__FILE__) . '/system/helpers/ad_analytics_functions.php');
+		require_once(dirname(__FILE__) . '/system/helpers/ad_functions.php');
 		
 		// Initialize the MobilePress check logic and rendering
 		$mobilepress->load_site();

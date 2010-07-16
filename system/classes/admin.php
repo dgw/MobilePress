@@ -51,60 +51,19 @@ if ( ! class_exists('MobilePress_admin'))
 		 * @package MobilePress
 		 * @since 1.1
 		 */
-		function render_ads_analytics()
+		function render_ads()
 		{
-			if (isset($_POST['add']))
+			if (isset($_POST['save']))
 			{
 				global $wpdb;
 				
-				// Options to be added
 				$updates	= array(
 								'aduity_account_public_key'	=> $_POST['apk'],
-								'aduity_account_secret_key'	=> $_POST['ask']
+								'aduity_site_public_key'	=> $_POST['spk'],
+								'aduity_ads_enabled'		=> $_POST['ads_enabled'],
+								'aduity_debug_mode'			=> $_POST['debug_mode'],
+								'aduity_ads_location'		=> $_POST['location']
 							);
-				
-				// Update the options table
-				foreach ($updates as $name => $update)
-				{
-					$wpdb->query(
-						$wpdb->prepare("
-							UPDATE
-								" . MOPR_TABLE . "
-							SET
-								option_value = '%s'
-							WHERE
-								option_name = '" . $name . "'
-							", $update)
-					);
-				}
-			}
-			else if (isset($_POST['edit']))
-			{
-				global $wpdb;
-				
-				if ( ! isset($_POST['error']))
-				{
-					// Options to be edited
-					$updates	= array(
-									'aduity_account_public_key'	=> $_POST['apk'],
-									'aduity_account_secret_key'	=> $_POST['ask'],
-									'aduity_analytics_enabled'	=> $_POST['analytics_enabled'],
-									'aduity_ads_enabled'		=> $_POST['ads_enabled'],
-									'aduity_debug_mode'			=> $_POST['debug_mode'],
-									'aduity_ads_type'			=> $_POST['type'],
-									'aduity_ads_campaign'		=> $_POST['campaign'],
-									'aduity_ads_ad'				=> $_POST['ad'],
-									'aduity_ads_location'		=> $_POST['location']
-								);
-				}
-				else
-				{
-					// Options to be edited
-					$updates	= array(
-									'aduity_account_public_key'	=> $_POST['apk'],
-									'aduity_account_secret_key'	=> $_POST['ask']
-								);
-				}
 				
 				// Update the options table
 				foreach ($updates as $name => $update)
@@ -124,129 +83,14 @@ if ( ! class_exists('MobilePress_admin'))
 				mopr_display_notice("<p><strong>Options Saved</strong></p>");
 			}
 			
-			$apk = mopr_get_option('aduity_account_public_key');
-			$ask = mopr_get_option('aduity_account_secret_key');
+			$data['apk'] 				= mopr_get_option('aduity_account_public_key');
+			$data['spk'] 				= mopr_get_option('aduity_site_public_key');
+			$data['ads_enabled']		= mopr_get_option('aduity_ads_enabled');
+			$data['debug_mode']			= mopr_get_option('aduity_debug_mode');
+			$data['location']			= mopr_get_option('aduity_ads_location');
 			
-			// Check if they have setup their account yet
-			if ($apk == '' || $ask == '')
-			{
-				// Load ads and analytics setup view
-				mopr_load_view('admin_ads_analytics_setup');
-			}
-			else
-			{
-				$data['apk'] 				= $apk;
-				$data['ask'] 				= $ask;
-				$data['analytics_enabled']	= mopr_get_option('aduity_analytics_enabled');
-				$data['ads_enabled']		= mopr_get_option('aduity_ads_enabled');
-				$data['debug_mode']			= mopr_get_option('aduity_debug_mode');
-				$data['type']				= mopr_get_option('aduity_ads_type');
-				$data['campaign']			= mopr_get_option('aduity_ads_campaign');
-				$data['ad']					= mopr_get_option('aduity_ads_ad');
-				$data['location']			= mopr_get_option('aduity_ads_location');
-				
-				// Load libraries
-				$json	= mopr_load_json_library();
-				$aduity	= mopr_load_aduity_api_library($apk, $ask);
-				
-				// Lets do some checks
-				$validate = $json->decode($aduity->request('validate'));
-				
-				if ($validate->response == 'ok')
-				{
-					// Lets get the url of their Aduity account
-					$data['url'] = $json->decode($aduity->request('get_account_url'));
-					$data['url'] = $data['url']->url;
-					
-					// Importantly, we need to make sure this blog matches a site added to their Aduity account
-					$sites	= $json->decode($aduity->request('get_sites'));
-					$spk	= mopr_get_option('aduity_site_public_key');
-					
-					$domain = str_replace('http://', '', str_replace('https://', '', $_SERVER['HTTP_HOST']));
-					$domain = str_replace('www.', '', $domain);
-					$domain = explode('/', $domain);
-					$domain = $domain[0];
-					
-					if ($sites->response == 'ok')
-					{
-						foreach ($sites->sites as $site_data)
-						{
-							if ($domain == $site_data->site_domain)
-							{
-								if ($spk != $site_data->site_public_key)
-								{
-									global $wpdb;
-									
-									// Update site public key
-									$wpdb->query(
-										$wpdb->prepare("
-											UPDATE
-												" . MOPR_TABLE . "
-											SET
-												option_value = '%s'
-											WHERE
-												option_name = 'aduity_site_public_key'
-											", $site_data->site_public_key)
-									);
-										
-									$updated = TRUE;
-								}
-								else if ($spk == $site_data->site_public_key)
-								{
-									$updated = TRUE;
-								}
-							}
-						}
-					}
-					
-					if ( ! isset($updated))
-					{
-						// Display site error
-						mopr_display_notice('<p><strong>This domain has not been added to your Aduity account, please <a href="' . $data['url'] . '/sites/create_site">add it</a>.</strong></p>');
-					}
-					
-					if ($data['debug_mode'])
-					{
-						// Display debug warning
-						mopr_display_notice('<p><strong>Warning! Debug mode is enabled, thus ads will be displayed but not counted and analytics will not be tracked</strong></p>');
-					}
-					
-					// Get campaigns
-					$data['campaigns'] = $json->decode($aduity->request('get_campaigns'));
-					
-					if ($data['campaigns']->response == 'ok')
-					{
-						$data['campaigns'] = $data['campaigns']->campaigns;
-					}
-					else
-					{
-						$data['campaigns'] = NULL;
-					}
-					
-					// Get ads
-					$data['ads'] = $json->decode($aduity->request('get_ads'));
-					
-					if ($data['ads']->response == 'ok')
-					{
-						$data['ads'] = $data['ads']->ads;
-					}
-					else
-					{
-						$data['ads'] = NULL;
-					}
-				}
-				else if ($validate->response == 'error')
-				{
-					// Deal with validation error here
-					mopr_display_notice("<p><strong>Invalid account public key or account secret key, please check keys and try again.</strong></p>");
-					
-					// Tell view we have a validation error
-					$data['validation_error'] = TRUE;
-				}
-				
-				// Load ads and analytics view
-				mopr_load_view('admin_ads_analytics', $data);
-			}
+			// Load ads and analytics view
+			mopr_load_view('admin_ads', $data);
 		}
 		
 		/**

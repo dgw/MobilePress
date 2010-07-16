@@ -20,7 +20,5 @@
 			
 		</div>
 	
-	<?php mopr_analytics(); ?>
-	
 	</body>
 </html>

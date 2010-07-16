@@ -54,14 +54,9 @@ if ( ! class_exists('MobilePress_install'))
 						('iphone_theme', 'iphone', 'iPhone'),
 						('force_mobile', '0', ''),
 						('aduity_account_public_key', '', ''),
-						('aduity_account_secret_key', '', ''),
 						('aduity_site_public_key', '', ''),
 						('aduity_ads_enabled', '0', ''),
-						('aduity_analytics_enabled', '0', ''),
 						('aduity_debug_mode', '0', ''),
-						('aduity_ads_type', '0', ''),
-						('aduity_ads_campaign', '0', ''),
-						('aduity_ads_ad', '0', ''),
 						('aduity_ads_location', '0', '')
 					";
 			
@@ -111,6 +106,9 @@ if ( ! class_exists('MobilePress_install'))
 			
 			if (MOPR_DBVERSION < '1.1.1')
 				$this->upgrade_111();
+				
+			if (MOPR_DBVERSION < '1.1.5')
+				$this->upgrade_115();
 			
 			// Change the version in the database to the latest version after upgrade
 			$wpdb->query(
@@ -268,6 +266,31 @@ if ( ! class_exists('MobilePress_install'))
 					";
 	
 			$results = $wpdb->query($sql);
+		}
+		
+		function upgrade_115()
+		{
+			global $wpdb;
+			
+			// Delete options we no longer need
+			$sql	= "DELETE FROM " . MOPR_TABLE . " WHERE option_name = 'aduity_account_secret_key'";
+			$delete	= $wpdb->query($sql);
+			
+			// Delete options we no longer need
+			$sql	= "DELETE FROM " . MOPR_TABLE . " WHERE option_name = 'analytics_enabled'";
+			$delete	= $wpdb->query($sql);
+			
+			// Delete options we no longer need
+			$sql	= "DELETE FROM " . MOPR_TABLE . " WHERE option_name = 'aduity_ads_type'";
+			$delete	= $wpdb->query($sql);
+			
+			// Delete options we no longer need
+			$sql	= "DELETE FROM " . MOPR_TABLE . " WHERE option_name = 'aduity_ads_campaign'";
+			$delete	= $wpdb->query($sql);
+			
+			// Delete options we no longer need
+			$sql	= "DELETE FROM " . MOPR_TABLE . " WHERE option_name = 'aduity_ads_ad'";
+			$delete	= $wpdb->query($sql);
 		}
 	}
 }

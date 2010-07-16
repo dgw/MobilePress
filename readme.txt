@@ -3,7 +3,7 @@ Contributors: mattgeri, tylerreed
 Tags: mobile, iphone, android, mobilepress, cell phone, cellphone, handset, nokia, motorola, att, sprint, verizon, blackberry, palm, windows ce, opera, operamini, opera mini, google, yahoo, plugin, comments, posts
 Requires at least: 2.3
 Tested up to: 2.8.6
-Stable tag: 1.1.4
+Stable tag: 1.1.5
 
 MobilePress is a WordPress plugin that will render your WordPress blog on mobile
 handsets, with the ability to use customized mobile themes, track analytics and

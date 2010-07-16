@@ -54,8 +54,8 @@ if ( ! class_exists('MobilePress_core'))
 				//Add the 'Themes' submenu to the MobilePress menu and render the page
 				add_submenu_page('mobilepress', 'MobilePress Themes', 'Themes', 10, 'mobilepress-themes', array(&$MobilePress_admin, 'render_themes'));
 				
-				//Add the 'Ads and Analytics' submenu to the MobilePress menu and render the page
-				add_submenu_page('mobilepress', 'MobilePress Ads and Analytics', 'Ads & Analytics', 10, 'mobilepress-ads-analytics', array(&$MobilePress_admin, 'render_ads_analytics'));
+				//Add the 'Ads' submenu to the MobilePress menu and render the page
+				add_submenu_page('mobilepress', 'MobilePress Ads', 'Mobile Ads', 10, 'mobilepress-ads', array(&$MobilePress_admin, 'render_ads'));
 		}
 		
 		/**
