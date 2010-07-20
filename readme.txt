@@ -5,37 +5,43 @@ Requires at least: 2.3
 Tested up to: 2.8.6
 Stable tag: 1.1.5
 
-The MobilePress plugin renders your WordPress blog on mobile handsets, with customized mobile themes, analytics and
-ad serving.
-
+The MobilePress plugin renders your WordPress blog on mobile handsets, with customized mobile themes, analytics and ad serving.
 
 == Description ==
 
-MobilePress is a WordPress plugin that will render your WordPress blog on mobile
-handsets, with the ability to use customized themes. Built into MobilePress is the
-ability to track your mobile sites analytics and serve ads with [Aduity.com](http://aduity.com).
+MobilePress is a WordPress plugin that will render your WordPress blog on mobile handsets, with the ability to use customized themes. Built into MobilePress is the ability to track your mobile sites analytics and serve ads with [Aduity.com](http://aduity.com).
 
-Integration with [Aduity.com](http://aduity.com) enables you to serve ads from some of the biggest
-mobile ad networks such as Admob, Quattro Wireless, Buzzcity and InMobi. You can
-also serve you own managed ads. You will also be able to track your visitors every
-move with Aduity analytics.
+Integration with [Aduity.com](http://aduity.com) enables you to serve ads from some of the biggest mobile ad networks such as Admob, Quattro Wireless, Buzzcity and InMobi. You can
+also serve you own managed ads. You will also be able to track your visitors every move with Aduity analytics.
 
-The plugin allows WordPress theme developers to create custom mobile themes for
-MobilePress enabled blogs. Theme designers can create specific iPhone themes or
-generic mobile themes for other mobile devices.
+The plugin allows WordPress theme developers to create custom mobile themes for MobilePress enabled blogs. Theme designers can create specific iPhone themes or generic mobile themes for other mobile devices.
 
-MobilePress is SEO enabled and detects Google, Yahoo and MSN mobile search bots.
-These mobile search engine bots will see the mobile version of your blog and get
-your mobile site indexed in the mobile search results.
+MobilePress is SEO enabled and detects Google, Yahoo and MSN mobile search bots. These mobile search engine bots will see the mobile version of your blog and get your mobile site indexed in the mobile search results.
 
-For more information and a full set of docs, please visit the official MobilePress
-website at [MobilePress.co.za](http://mobilepress.co.za)
-
+For more information and a full set of docs, please visit the official MobilePress website at [MobilePress.co.za](http://mobilepress.co.za)
 
 == Installation ==
 
-Installation instructions available at: [MobilePress.co.za](http://mobilepress.co.za/download/installation)
+Upgrading or installing MobilePress for the first time is a very simple process. There are just a few steps below which you will easily be able to follow. Lets go!
 
+= Important Note About Auto Upgrading =
+
+If you are using the WordPress plugin auto updater you will need to back up your themes folder (if you have made custom changes to the default MobilePress themes!). If you have not made changes to the themes or if you have not uploaded your own custom themes, you do not have to worry.
+
+The reason for backing up your themes is when the WordPress auto upgrader upgades the plugins, it removes all the files in the MobilePress directory, thus removing any custom changes you have made to the MobilePress themes. It will also remove any custom themes you have uploaded.
+
+= For Upgrading Manually =
+
+If you are upgrading MobilePress, delete all your old MobilePress files from the mobilepress plugin directory. If you have a custom theme or have modified the default theme, you do not have to delete the `/themes` folder.
+
+= Installation Steps =
+
+1. Upload the mobilepress directory to your `/wp-content/plugins/` directory
+1. Activate the plugin through the ‘Plugins’ menu in WordPress
+1. If you are using a caching plugin (ie, wp-supercache), clear your cache now.
+1. If you plan on using custom themes, or wish to specify a custom title/description for your mobile blog, you can set these in the MobilePress admin panel.
+
+That’s all folks! You’re now good to go!
 
 == Config & Settings ==
 
@@ -43,30 +49,24 @@ Once successfully installed, you will be presented with a few options.
 
 = Blog Title =
 
-Changing this will replace the title of your blog when being viewed on a
-mobile device.  So, instead of "My cool blog", you could replace it with
-something like "My mobile blog".  This will not affect your site when being
-viewed on a regular web browser.
+Changing this will replace the title of your blog when being viewed on a mobile device.  So, instead of "My cool blog", you could replace it with something like "My mobile blog".  This will not affect your site when being viewed on a regular web browser.
 
 = Blog Description =
 
-This is the same as changing your blog title, but will modify your blog's
-description instead.
+This is the same as changing your blog title, but will modify your blog's description instead.
 
 = Force Mobile Site =
 
-This option will force your site to be rendered as mobile, regardless of where
-it is being viewed from. Regular web browsers will see the mobile version.
-
+This option will force your site to be rendered as mobile, regardless of where it is being viewed from. Regular web browsers will see the mobile version.
 
 == Frequently Asked Questions ==
 
-FAQ available at: [MobilePress.co.za](http://mobilepress.co.za/support)
+FAQ available at [MobilePress.co.za](http://mobilepress.co.za/support)
 
 
 == Screenshots ==
 
-Screenshots are available at: [MobilePress.co.za](http://mobilepress.co.za)
+Screenshots are currently available at [MobilePress.co.za](http://mobilepress.co.za/)
 
 == Changelog ==
 
