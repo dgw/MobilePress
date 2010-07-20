@@ -18,7 +18,7 @@ The plugin allows WordPress theme developers to create custom mobile themes for 
 
 MobilePress is SEO enabled and detects Google, Yahoo and MSN mobile search bots. These mobile search engine bots will see the mobile version of your blog and get your mobile site indexed in the mobile search results.
 
-For more information and a full set of docs, please visit the official MobilePress website at [MobilePress.co.za](http://mobilepress.co.za)
+For more information and a full set of docs, please visit the official MobilePress website at [MobilePress.co.za](http://mobilepress.co.za/)
 
 == Installation ==
 
