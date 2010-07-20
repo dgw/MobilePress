@@ -5,9 +5,8 @@ Requires at least: 2.3
 Tested up to: 2.8.6
 Stable tag: 1.1.5
 
-MobilePress is a WordPress plugin that will render your WordPress blog on mobile
-handsets, with the ability to use customized mobile themes, track analytics and
-serve ads.
+The MobilePress plugin renders your WordPress blog on mobile handsets, with customized mobile themes, analytics and
+ad serving.
 
 
 == Description ==
@@ -68,3 +67,61 @@ FAQ available at: [MobilePress.co.za](http://mobilepress.co.za/support)
 == Screenshots ==
 
 Screenshots are available at: [MobilePress.co.za](http://mobilepress.co.za)
+
+== Changelog ==
+
+= Version 1.1.5 (2010-07-20) =
+* Updated the Aduity libraries to support the new mediation layer from Aduity.com
+
+= Version 1.1.4 (2009-12-17) =
+* Removed the XML MIME type as it was throwing way to many errors on MobilePress blogs
+* Added CSS image resizing code which correctly resizes all images larger than 300px wide and does not resize images less than 300px wide
+* Cleaned up some default theme code
+
+= Version 1.1.3 (2009-12-09) =
+* Fixed a bug whereby the title and description that was set for the mobile blog was not being switched with the title and description set for the WordPress blog. Thus, on the mobile blog the WordPress blogs title and description was being displayed.
+
+= Version 1.1.2 (2009-12-08) =
+* Fixed some major errors in the default themes. Comments were not displaying and users were unable to post comments on default theme. On the iPhone theme, single posts were not viewable. 1.1.2 is a critical upgrade.
+
+= Version 1.1.1 (2009-12-07) =
+* Moved the folder for custom themes to ‘/mobile-themes’ in ‘/wp-content’. Also added an option to change this folder if you want. This solves the issue of themes being overwritten when the plugin updates
+* Cleaned up the default themes HTML code and CSS. Now scores a 5/5 on ready.mobi
+* Added an option to the ‘Ads & Analytics’ page which allows you to test ads in a web browser using ‘debug’ mode from Aduity.com
+* Removed the CSS image resizing code. Next MobilePress release 1.2 will include a proper image resizing script
+
+= Version 1.1 (2009-11-24) =
+* Full ad and analytics integration with Aduity.com
+* Added new code libraries for Aduity integration
+* Removed confusing options such as “treat device as web browser”
+* Modified mobile detection script. Optimized and also removed eregi references. Added detection for more user-agents (Thanks StarTech)
+* Adding new structural code to easily load “views” for the admin area
+* General cleaning up of code
+
+= Version 1.0.4 (2009-06-15) =
+* Reworked MobilePress file structure
+* Added DocBlock to the plugin classes and functions
+* Added in a delete/uninstall hook
+* Added post paging to the Default and iPhone themes
+* Removed wp_head() and wp_foot() from mobile themes
+* Changed theme default background color to a lighter color so that Disqus comments show
+* Cleaned up the options interface to make it integrate better with the WordPress interface
+* Fixed a bug that was created by WordPress 2.8 which duplicated the options menu
+* Added a MobilePress Icon to the WordPress Admin Sidebar
+* Updated the readme file to reflect changes to the new website
+
+= Version 1.0.3 (2008-11-20) =
+* Added pages support to the default theme and iPhone theme
+* Added Google and Yahoo mobile bot detection
+* Added a uninstall.php file for WordPress 2.7+
+* Fixed conflicting plugin function errors and restructured a lot of the codebase (thanks darb)
+* Added new user agent strings for Palm and Blackberry handsets
+* Fixed CheckTable() function bug which resulted in plugin not being updated automatically and also added in an upgrade fix
+
+= Version 1.0.2 (2008-10-27) =
+* Replaced $_GET reference in search.php
+
+= Version 1.0.1 (2008-10-24) =
+* Theme Modification (Comments link now goes to comments page)
+* HTC added to list of mobile handsets
+* Thanks to Denham Coote for contributing
