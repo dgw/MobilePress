@@ -1,5 +1,5 @@
 === MobilePress ===
-Contributors: mattgeri, tylerreed
+Contributors: mattgeri, tylerreed, voyagerfan5761
 Tags: mobile, iphone, android, mobilepress, cell phone, cellphone, handset, nokia, motorola, att, sprint, verizon, blackberry, palm, windows ce, opera, operamini, opera mini, google, yahoo, plugin, comments, posts
 Requires at least: 2.3
 Tested up to: 2.8.6
