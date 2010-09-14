@@ -28,7 +28,7 @@ Upgrading or installing MobilePress for the first time is a very simple process.
 
 If you are using the WordPress plugin auto updater you will need to back up your themes folder (if you have made custom changes to the default MobilePress themes!). If you have not made changes to the themes or if you have not uploaded your own custom themes, you do not have to worry.
 
-The reason for backing up your themes is when the WordPress auto upgrader upgades the plugins, it removes all the files in the MobilePress directory, thus removing any custom changes you have made to the MobilePress themes. It will also remove any custom themes you have uploaded.
+The reason for backing up your themes is when the WordPress auto upgrader upgrades the plugins, it removes all the files in the MobilePress directory, thus removing any custom changes you have made to the MobilePress themes. It will also remove any custom themes you have uploaded.
 
 = For Upgrading Manually =
 
@@ -38,7 +38,7 @@ If you are upgrading MobilePress, delete all your old MobilePress files from the
 
 1. Upload the mobilepress directory to your `/wp-content/plugins/` directory
 1. Activate the plugin through the ‘Plugins’ menu in WordPress
-1. If you are using a caching plugin (ie, wp-supercache), clear your cache now.
+1. If you are using a caching plugin (e.g. wp-supercache), clear your cache now.
 1. If you plan on using custom themes, or wish to specify a custom title/description for your mobile blog, you can set these in the MobilePress admin panel.
 
 That’s all folks! You’re now good to go!
