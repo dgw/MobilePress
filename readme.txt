@@ -28,20 +28,23 @@ Upgrading or installing MobilePress for the first time is a very simple process.
 
 If you are using the WordPress plugin auto updater you will need to back up your themes folder (if you have made custom changes to the default MobilePress themes!). If you have not made changes to the themes or if you have not uploaded your own custom themes, you do not have to worry.
 
-The reason for backing up your themes is when the WordPress auto upgrader upgades the plugins, it removes all the files in the MobilePress directory, thus removing any custom changes you have made to the MobilePress themes. It will also remove any custom themes you have uploaded.
+The reason for backing up your themes is when the WordPress auto upgrader 
+upgrades the plugins, it removes all the files in the MobilePress directory, thus removing any custom changes you have made to the MobilePress themes. It will also remove any custom themes you have uploaded.
 
 = For Upgrading Manually =
 
-If you are upgrading MobilePress, delete all your old MobilePress files from the mobilepress plugin directory. If you have a custom theme or have modified the default theme, you do not have to delete the `/themes` folder.
+If you are upgrading MobilePress, delete all your old MobilePress files from 
+the mobilepress plugin directory. If you have a custom theme or have modified 
+the default theme, you do not have to delete the `/themes` folder.
 
 = Installation Steps =
 
 1. Upload the mobilepress directory to your `/wp-content/plugins/` directory
-1. Activate the plugin through the ‘Plugins’ menu in WordPress
+1. Activate the plugin through the "Plugins" menu in WordPress
 1. If you are using a caching plugin (ie, wp-supercache), clear your cache now.
 1. If you plan on using custom themes, or wish to specify a custom title/description for your mobile blog, you can set these in the MobilePress admin panel.
 
-That’s all folks! You’re now good to go!
+That's all folks! You're now good to go!
 
 == Config & Settings ==
 
@@ -85,17 +88,19 @@ Screenshots are currently available at [MobilePress.co.za](http://mobilepress.co
 * Fixed some major errors in the default themes. Comments were not displaying and users were unable to post comments on default theme. On the iPhone theme, single posts were not viewable. 1.1.2 is a critical upgrade.
 
 = Version 1.1.1 (2009-12-07) =
-* Moved the folder for custom themes to ‘/mobile-themes’ in ‘/wp-content’. Also added an option to change this folder if you want. This solves the issue of themes being overwritten when the plugin updates
+* Moved the folder for custom themes to `/mobile-themes` in `/wp-content`. 
+Also added an option to change this folder if you want. This solves the issue of themes being overwritten when the plugin updates
 * Cleaned up the default themes HTML code and CSS. Now scores a 5/5 on ready.mobi
-* Added an option to the ‘Ads & Analytics’ page which allows you to test ads in a web browser using ‘debug’ mode from Aduity.com
+* Added an option to the "Ads & Analytics" page which allows you to test 
+ads in a web browser using "debug" mode from Aduity.com
 * Removed the CSS image resizing code. Next MobilePress release 1.2 will include a proper image resizing script
 
 = Version 1.1 (2009-11-24) =
 * Full ad and analytics integration with Aduity.com
 * Added new code libraries for Aduity integration
-* Removed confusing options such as “treat device as web browser”
+* Removed confusing options such as "Treat device as web browser"
 * Modified mobile detection script. Optimized and also removed eregi references. Added detection for more user-agents (Thanks StarTech)
-* Adding new structural code to easily load “views” for the admin area
+* Adding new structural code to easily load "views" for the admin area
 * General cleaning up of code
 
 = Version 1.0.4 (2009-06-15) =
