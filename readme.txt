@@ -110,25 +110,25 @@ Screenshots are currently available at [MobilePress.co.za](http://mobilepress.co
 * Removed the XML MIME type as it was throwing way too many errors on
   MobilePress blogs
 * Added CSS image resizing code which correctly resizes all images
-  larger than 300px wide and does not resize images less than 300px wide
+  larger than 300px wide and does not touch images less than 300px wide
 * Cleaned up some default theme code
 
 = Version 1.1.3 (2009-12-09) =
 * Fixed a bug whereby the title and description that was set for the
-  mobile blog was not being switched with the title and description set
-  for the WordPress blog. Thus, on the mobile blog the WordPress blog's
-  title and description was being displayed.
+  mobile blog was not being substituted for the title and description
+  set for the WordPress blog. Thus, on the mobile blog the WordPress
+  blog's title and description was being displayed.
 
 = Version 1.1.2 (2009-12-08) =
+* Critical upgrade
 * Fixed some major errors in the default themes. Comments were not
-  displaying and users were unable to post comments on default theme.
-  On the iPhone theme, single posts were not viewable. 1.1.2 is a
-  critical upgrade.
+  displaying and users were unable to post comments on the default
+  theme. On the iPhone theme, single posts were not viewable.
 
 = Version 1.1.1 (2009-12-07) =
 * Moved the folder for custom themes to `/mobile-themes` in `/wp-content`.
-  Also added an option to change this folder if you want. This solves
-  the issue of themes being overwritten when the plugin updates
+  Also added an option to change this folder, which solves the issue of
+  themes being overwritten when the plugin is updated.
 * Cleaned up the default theme's HTML code and CSS. Now scores a 5/5 on
   ready.mobi
 * Added an option to the "Ads & Analytics" page which allows you to test
@@ -155,13 +155,12 @@ Screenshots are currently available at [MobilePress.co.za](http://mobilepress.co
   Disqus comments show
 * Cleaned up the options interface to make it integrate better with the
   WordPress interface
-* Fixed a bug that was created by WordPress 2.8 which duplicated the
-  options menu
+* Fixed a bug created by WordPress 2.8 which duplicated the options menu
 * Added a MobilePress icon to the WordPress Admin sidebar
 * Updated the readme file to reflect changes to the new website
 
 = Version 1.0.3 (2008-11-20) =
-* Added pages support to the default theme and iPhone theme
+* Added support for pages to the default theme and iPhone theme
 * Added Google and Yahoo! mobile bot detection
 * Added a uninstall.php file for WordPress 2.7+
 * Fixed conflicting plugin function errors and restructured a lot of the
