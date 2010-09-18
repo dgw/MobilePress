@@ -35,9 +35,8 @@ MobilePress website at [MobilePress.co.za](http://mobilepress.co.za/).
 
 == Installation ==
 
-Upgrading or installing MobilePress for the first time is a very simple
-process. There are just a few steps below which you will easily be able
-to follow. Lets go!
+Upgrading or installing MobilePress for the first time is very simple.
+There are just a few easy steps below for you to follow. Let's go!
 
 = Important Note About Auto-Upgrading =
 
@@ -49,19 +48,18 @@ you have not uploaded your own custom themes, you do not have to worry.
 The reason for backing up your themes is when the WordPress auto-updater
 upgrades the plugins, it removes all the files in the MobilePress
 directory, thus removing any custom changes you have made to the
-MobilePress themes. It will also remove any custom themes you have
-uploaded.
+MobilePress themes and any custom themes you have uploaded.
 
 = For Upgrading Manually =
 
 If you are upgrading MobilePress, delete all your old MobilePress files
-from the mobilepress plugin directory. If you have a custom theme or
-have modified the default theme, you do not have to delete the
-`/themes` folder.
+from the plugin directory. If you have a custom theme or have modified
+the default theme, you do not have to delete the `/themes` folder.
 
 = Installation Steps =
 
-1. Upload the mobilepress directory to your `/wp-content/plugins/`
+1. Unpack the ZIP archive if you haven't already done so
+1. Upload the `mobilepress` directory to your `/wp-content/plugins/`
    directory
 1. Activate the plugin through the "Plugins" menu in WordPress
 1. If you are using a caching plugin (e.g. wp-supercache), clear your
