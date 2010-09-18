@@ -72,7 +72,7 @@ That's all folks! You're now good to go!
 
 == Config & Settings ==
 
-Once successfully installed, you will be presented with a few options.
+Once MobilePress is installed, you will be presented with a few options.
 
 = Blog Title =
 
@@ -90,7 +90,7 @@ blog's description instead.
 
 This option will force your site to be rendered as mobile, regardless
 of where it is being viewed from. Regular web browsers will see the
-mobile version.
+mobile version. (It's handy for testing.)
 
 == Frequently Asked Questions ==
 
