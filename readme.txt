@@ -12,8 +12,8 @@ with customized mobile themes, analytics, and ad serving.
 
 MobilePress is a WordPress plugin that will render your WordPress blog
 on mobile handsets, with the ability to use customized themes. Built
-into MobilePress is the ability to track your mobile sites' analytics and
-serve ads with [Aduity.com](http://aduity.com/).
+into MobilePress are the capabilities to track your mobile sites'
+analytics and serve ads with [Aduity.com](http://aduity.com/).
 
 Integration with [Aduity.com](http://aduity.com/) enables you to serve
 ads from some of the biggest mobile ad networks such as Admob, Quattro
@@ -28,8 +28,7 @@ devices.
 
 MobilePress is SEO-enabled and detects Google, Yahoo!, and MSN mobile
 search bots. These mobile search engine bots will see the mobile version
-of your blog and get your mobile site indexed in the mobile search
-results.
+of your blog and add your mobile site to their mobile search results.
 
 For more information and a full set of docs, please visit the official
 MobilePress website at [MobilePress.co.za](http://mobilepress.co.za/).
